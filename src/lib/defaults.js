@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = {
   configFilePath: path.resolve(process.cwd(), 'config'),
+  filesMatchingPattern: /.*\.js$/,
   indexFilename: 'index.js',
   outputFilePath: (config) =>
     path.resolve(

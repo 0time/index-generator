@@ -11,6 +11,7 @@ d(me, () => {
     expect(Object.keys(defaults).sort()).to.deep.equal(
       [
         'configFilePath',
+        'filesMatchingPattern',
         'indexFilename',
         'outputFilePath',
         'overwrite',
