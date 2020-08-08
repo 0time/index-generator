@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- 8
+- 10
+- 11
+- 12
+jobs:
+  include:
+  - if: type = pull_request
+    node_js: 12
+    stage: expect_version_bump
+    script: yarn check-for-version-bump
+  - node_js: 12
+    if: branch = master
+    stage: deploy
+    deploy:
+      api_key:
+        secure: qxWci8ZE+g1hebm/577mRPela4FE8VN6LAkNsVO7S8d3GA2lqS3zkloklZq44WbX9bjyyoCL8/QD24ihsL+aKvuwDZw7m80LlT8eoMzgUzfUQsSec+yXli9zxlzQXy84Qspyk1JVMh95msnfFRO41yzCM9eDWmrSCtqRd0bpMfcZrCr3WHoAa8dBuLhSYIO/DVPyZrV70FpUhvMDV203t1enrXKPhpGtxb8/54fXpjWJ6IX2oB2wry1AaySSpgCGzMULkbuJgGLaf10VWBYN0T+6uevrjgN4zrIJ1FjYNUrZso3aeSWTQKdUfEpUBzko2bVNFR4J0HVTt5jgMUipo2APjdHZHsd5TlUaPCeWDAsMM8qTkcNx2jNYAKz3vMvPtUPQGDX0tepy39J514Q8kLFiSynBM+8ubtkbziWOkUnHEHUOjFvGlaorZwoN0hdqfVpmqCncr240sQOWeHdOCjSmQ/zsodz3Vd7e1jdYLeYruIJPIz9T+wHtgpjiShGNOYSZTRY08DmkYZHPNhQs573tIkEXvfZ2ZKi2dXYPygWBTpGW6JnbZ+2V3UVlYvE904lndAzg/MXl44Ccq3gpEBne70q1/9hmDHwKjvADE7a+Rz4MWDFB0XaUbBMzpsr6+6jopY1kkwCxh1OGVYBoZQshLp2XHVkstzjklM82Mc4=
+      email: npm@0ti.me
+      provider: npm
+      on:
+        branch: master
+        repo: 0time/tiny-pfp

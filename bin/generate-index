@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const index = require('../src');
+const minimist = require('minimist');
+
+const main = args =>
+  Promise.resolve()
+    .then(() => {
+      if (args.overwrite === 'true') {
+        Object.assign(args, {overwrite: true});
+      }
+
+      return args;
+    })
+    .then(index)
+    .then(() => 0)
+    .catch(err => {
+      if (err) {
+        console.error(err);
+
+        return 127;
+      }
+
+      return 0;
+    })
+    .then(process.exit);
+
+main(minimist(process.argv.slice(2)));

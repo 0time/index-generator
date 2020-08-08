@@ -1,0 +1,29 @@
+{
+  "name": "@0ti.me/index-generator",
+  "version": "0.1.0",
+  "description": "A library which provides tooling to generate an index.js file based on a configured file-path",
+  "license": "GPL-3.0",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "run-coveralls": "NODE_ENV=unit nyc report --reporter=text-lcov | coveralls",
+    "test": "yarn lint && yarn test:unit && yarn test:coveralls && yarn test:integration",
+    "test:coveralls": "if-env-run CI yarn run-coveralls",
+    "test:fixtures:generate": "mon ./bin/generate-index --configFilePath config --overwrite true",
+    "test:integration": "export NODE_ENV=integration && nyc mocha && nyc check-coverage",
+    "test:unit": "NODE_ENV=unit nyc mocha"
+  },
+  "devDependencies": {
+    "@0ti.me/test-deps": "^0.1.13",
+    "lint-staged": "^9.4.2",
+    "proxyquire": "^2.1.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@0ti.me/tiny-pfp": "^0.1.6",
+    "minimist": "^1.2.5",
+    "prettier": "^2.0.5"
+  }
+}
