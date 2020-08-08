@@ -1,4 +1,4 @@
-const { d, expect, tquire } = deps;
+const { d, expect, tquire, uuid } = deps;
 
 const proxyquire = require('proxyquire').noPreserveCache().noCallThru();
 
@@ -24,7 +24,8 @@ d(me, () => {
 
   describe('given a single folder with files', () => {
     const args = { directory: Symbol() };
-    const files = [Symbol()];
+    const file = `${uuid()}.js`;
+    const files = [file];
 
     const returnValue = {
       directories: [],
