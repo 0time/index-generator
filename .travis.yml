@@ -14,9 +14,10 @@ jobs:
     stage: deploy
     deploy:
       api_key:
-        secure: "JjKAqc81DKAPa5SRezK7H3NcyVsc/LkTVLayYwyU/u0BJQQw/T/GqhourwhiaRLjQWUp/3wrIPbONJp+8uLxBMAmLMXRL+p83zjpsyxYvr4dvLXzOSIqGf3FuJIomAM5y6GPPslr/iTLuG4xcBngODxVnQJ8Xbw5GY0XcO2lkH9/Zbb6bEvuy2MKHExHla3L0uSNtmzL9KfKhsc1kOxdY51SlrF0xpul4ER7JFfAj3HUKZit7gUvCDyYqLHzTXopJY2yyVhOwK86MBSeXeqtGhqEdm4QXQD9yQFlPSgNUiM166syrlF7njl0qFaOf1QySTluXyuJqFlVAhD//YPqCK32dN3pmJw0WZvmDQ1i0vYPsLkmLjvQ7+TaDH9rcSsdV3oz4k7NJ0wKQ7qmjAJqAeIn9+Pv7Ud0bjvLCSvNNLpY+rtbwGmN5pBbileeaaSOIZ7bKSeUJ/UU2iswAfLA5YQjWXTKKxckgXKoUnc6wv8aAZcLtixev0HP4PMqi12tcVygwxLRQ3SVQdE8YcqR0OQKHaucmErgwv7FUooJ/KO8c1oFdkyudk2vk0eP/Y9kKmCSaktLrKaijvvWxUeZWG9fkFdppbzcoTrnPn6KEHnBWb3TtPd+nipj+LTwacdvSVhtuuzEwPQmhfj2vwMhOzUxvGbtNoZUDwJDyZlOoHs="
+        secure: g/RukWfz1joahVYd5UbyCK1FWtlkVZzkh+G4usqp/beTKF9bjEPaLFVmEuH7v3wxgY5vUwsa2eFCe7dgQrY/OE9cb9aqdDbYRL8KANem+7eORAB2V1k+Zz7WW9Fp5lJTwwbHEghol5/4XdunDA6O6uCf1pU8BKeXllZuz+XCXEoTTJDudpGwR/dbyobLzoW0GIuAH0Nz8Fvn8mSHk8XI4X7zMi8vtr7xab/1v26BZK07QmMTx2sCIrd7QtCSPRbUYwlgDcEWgDAJsG+b1WAMFj9weD8g5mpnnTxmUwhaLwnv8TwTSEOWbsr5BUc4SBJU3JPb6wqShusBjzU9tKtT/qyXzhZRDOc8sOYzNugFlRjl3tTa8TIIgZMMqGD74ngh2i3CGt5RguymUN/2Q5LX9+/PUb1116qy+p68k2ak74EBIHmUOnWgVSZ4qa59KAqLDo+X1jZwCz31KRS5RPp/G3j1AqfH9vzZQmMGQlcW0IZAJ6/+8fyCk3K1V/wqWagEiCgb3DNI6IBAkLeYhSorhr3YdV6gZ32G2YSp6vm284+jFMEeIlV56/e9o9kZpY9a5jSyc9zHT7/RvuhUtbY3kGUP04JpShlmX8xVCmN79iqIIr7b+sNg+WfQkaVhvPKiooDXux1l9ZW4loE+N5lUvR5nEhp2667FM6Dcqsmwwmk=
       email: npm@0ti.me
       provider: npm
+      skip_cleanup: true
       on:
         branch: master
         repo: 0time/index-generator

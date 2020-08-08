@@ -25,7 +25,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@0ti.me/tiny-pfp": "^0.1.6",
+    "@0ti.me/tiny-pfp": "^0.1.10",
     "minimist": "^1.2.5",
     "prettier": "^2.0.5"
   }
