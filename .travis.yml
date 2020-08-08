@@ -19,4 +19,4 @@ jobs:
       provider: npm
       on:
         branch: master
-        repo: 0time/tiny-pfp
+        repo: 0time/index-generator
