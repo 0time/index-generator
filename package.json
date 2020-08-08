@@ -1,9 +1,12 @@
 {
   "name": "@0ti.me/index-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A library which provides tooling to generate an index.js file based on a configured file-path",
   "license": "GPL-3.0",
   "main": "src/index.js",
+  "bin": {
+    "generate-index": "./bin/generate-index"
+  },
   "scripts": {
     "lint": "eslint .",
     "run-coveralls": "NODE_ENV=unit nyc report --reporter=text-lcov | coveralls",
