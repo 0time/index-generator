@@ -25,7 +25,7 @@ module.exports = (args) =>
     reduce(requireAllFileReducer(args), {}),
     fpJsonStringify(null, 2),
     fpPrependString('module.exports = '),
-    fpPrependString(get(args, 'prefix', '/* istanbul ignore file */\n\n')),
+    fpPrependString(get(args, 'prefix')),
     stringReplace(doubleQuoteRegex, ''),
     fpPrettierFormat(args),
     fpWriteFileSync(args),

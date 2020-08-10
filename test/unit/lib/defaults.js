@@ -15,6 +15,7 @@ d(me, () => {
         'indexFilename',
         'outputFilePath',
         'overwrite',
+        'prefix',
         'writeFileSyncOptions',
       ].sort(),
     ));

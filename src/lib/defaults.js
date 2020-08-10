@@ -12,6 +12,7 @@ module.exports = {
       get(config, 'indexFilename'),
     ),
   overwrite: false,
+  prefix: '/* istanbul ignore file */\n\n',
   writeFileSyncOptions: {
     encoding: 'utf-8',
   },
