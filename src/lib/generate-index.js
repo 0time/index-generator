@@ -1,4 +1,7 @@
-const { flow, map, reduce, stringReplace } = require('@0ti.me/tiny-pfp').fp;
+const {
+  get,
+  fp: { flow, map, reduce, stringReplace },
+} = require('@0ti.me/tiny-pfp');
 
 const fpJsonStringify = require('./fp-json-stringify');
 const fpPrependString = require('./fp-prepend-string');
@@ -22,6 +25,7 @@ module.exports = (args) =>
     reduce(requireAllFileReducer(args), {}),
     fpJsonStringify(null, 2),
     fpPrependString('module.exports = '),
+    fpPrependString(get(args, 'prefix', '/* istanbul ignore file */\n\n')),
     stringReplace(doubleQuoteRegex, ''),
     fpPrettierFormat(args),
     fpWriteFileSync(args),
