@@ -16,6 +16,11 @@
     "test:integration": "export NODE_ENV=integration && nyc mocha && nyc check-coverage",
     "test:unit": "NODE_ENV=unit nyc mocha"
   },
+  "dependencies": {
+    "@0ti.me/tiny-pfp": "^0.1.10",
+    "minimist": "^1.2.5",
+    "prettier": "^2.0.5"
+  },
   "devDependencies": {
     "@0ti.me/test-deps": "^0.1.13",
     "lint-staged": "^9.4.2",
@@ -23,10 +28,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@0ti.me/tiny-pfp": "^0.1.10",
-    "minimist": "^1.2.5",
-    "prettier": "^2.0.5"
   }
 }
