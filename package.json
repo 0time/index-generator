@@ -17,12 +17,13 @@
     "test:unit": "NODE_ENV=unit nyc mocha"
   },
   "dependencies": {
+    "@0ti.me/en-path": "^0.1.0",
     "@0ti.me/tiny-pfp": "^0.1.10",
     "minimist": "^1.2.5",
     "prettier": "^2.0.5"
   },
   "devDependencies": {
-    "@0ti.me/test-deps": "^0.1.13",
+    "@0ti.me/test-deps": "^0.1.16",
     "lint-staged": "^9.4.2",
     "proxyquire": "^2.1.3"
   },

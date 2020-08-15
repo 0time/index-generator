@@ -1,9 +1,8 @@
-const proxyquire = require('proxyquire').noPreserveCache().noCallThru();
 const {
   d,
   expect,
+  pquire,
   sinon: { stub },
-  tquire,
 } = deps;
 
 const me = __filename;
@@ -39,7 +38,7 @@ d(me, () => {
     mocks['fs'] = mockFs;
     mocks['path'] = mockPath;
 
-    reduceToSetsOfStats = proxyquire(tquire(me, false), mocks);
+    reduceToSetsOfStats = pquire(me, mocks);
   });
 
   it('should call path.resolve with dir and each', () => {
