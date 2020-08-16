@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
   configFilePath: path.resolve(process.cwd(), 'config'),
   filesMatchingRegex: /.*\.js$/,
+  ignoreSelf: true,
   indexFilename: 'index.js',
   outputFilePath: (config) =>
     path.resolve(

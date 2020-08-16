@@ -12,6 +12,7 @@ d(me, () => {
       [
         'configFilePath',
         'filesMatchingRegex',
+        'ignoreSelf',
         'indexFilename',
         'outputFilePath',
         'overwrite',
