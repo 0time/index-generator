@@ -3,11 +3,20 @@ const { d, expect, pquire, uuid } = deps;
 const me = __filename;
 
 d(me, () => {
+  const filesMatchingRegex = /.*\.js$/;
+
+  let listFilesSync = null;
+  let mocks = null;
+  let reduceToTypesSync = null;
   // An array of objects with an arg: [] and returnValue: <object>|<array>|<primitive>|etc.
   let reduceToTypesSyncReturnList = [];
-  let reduceToTypesSync = null;
-  let mocks = null;
-  let listFilesSync = null;
+
+  afterEach(() => {
+    listFilesSync = null;
+    mocks = null;
+    reduceToTypesSync = null;
+    reduceToTypesSyncReturnList = [];
+  });
 
   const initializeListFilesSync = () => {
     mocks = {};
@@ -68,5 +77,32 @@ d(me, () => {
 
     it('should return the full list of files', () =>
       expect(listFilesSync(args)).to.deep.equal(['/bla', '/bla2/bla']));
+  });
+
+  describe('given that a file result matches the output file and ignoreSelf=true', () => {
+    const args = {
+      directory: '/',
+      filesMatchingRegex,
+      ignoreSelf: true,
+      outputFilePath: '/bla/index.js',
+    };
+
+    let otherLibs = null;
+
+    beforeEach(() => {
+      otherLibs = [`other-lib-1-${uuid()}.js`, `other-lib-2-${uuid()}.js`];
+      reduceToTypesSyncReturnList.push({
+        args: args.directory,
+        returnValue: {
+          directories: [],
+          files: ['/bla/index.js'].concat(otherLibs),
+        },
+      });
+
+      initializeListFilesSync();
+    });
+
+    it('should only return the other files', () =>
+      expect(listFilesSync(args)).to.deep.equal(otherLibs));
   });
 });
