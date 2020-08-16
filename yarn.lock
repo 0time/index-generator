@@ -2,10 +2,15 @@
 # yarn lockfile v1
 
 
-"@0ti.me/test-deps@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@0ti.me/test-deps/-/test-deps-0.1.13.tgz#be9406565be3878aacc78f6a42ac01d505bf375b"
-  integrity sha512-gZFam6sEAR47AndRWSuHLuQqNbKfGkab82k0UY7uQaTwh+DcDQqRPPmQRs5ljOwXXW8TVUxCFMwXWcXFQVQmjw==
+"@0ti.me/en-path@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@0ti.me/en-path/-/en-path-0.1.0.tgz#410504d6b47a07573ffe94ac8a2666c8d5fd053c"
+  integrity sha512-lde72ajBq/CN3eXiztuP4vsFgMzfLk8HRhnqdzbTiY5yjQiisaC2CC0a/vfdSms2ZsAxiz94GeAijktI4t+KPw==
+
+"@0ti.me/test-deps@^0.1.16":
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/@0ti.me/test-deps/-/test-deps-0.1.16.tgz#ee8bfdb61b63ba2324d9c58e693362d03cc47901"
+  integrity sha512-HEUSvgKpMmEAUvSBa6pTGzUQ49gHFBz4bq+hn8C3nvdjPYAiopFqJ+no4kk+vSSqGxbX7inHmSyxX8+MrUNkMQ==
   dependencies:
     bluebird "^3.7.1"
     chai "^4.2.0"
@@ -20,6 +25,7 @@
     mocha "^6.2.1"
     nyc "^14.1.1"
     prettier "^1.18.2"
+    proxyquire "^2.1.3"
     sinon "^9.0.2"
     sinon-as-promised "^4.0.3"
     sinon-chai "^3.5.0"

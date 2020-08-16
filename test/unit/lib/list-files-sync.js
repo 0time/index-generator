@@ -1,6 +1,4 @@
-const { d, expect, tquire, uuid } = deps;
-
-const proxyquire = require('proxyquire').noPreserveCache().noCallThru();
+const { d, expect, pquire, uuid } = deps;
 
 const me = __filename;
 
@@ -19,7 +17,7 @@ d(me, () => {
 
     mocks['./reduce-to-types-sync'] = reduceToTypesSync;
 
-    listFilesSync = proxyquire(tquire(me, false), mocks);
+    listFilesSync = pquire(me, mocks);
   };
 
   describe('given a single folder with files', () => {

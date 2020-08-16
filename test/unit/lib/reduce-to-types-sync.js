@@ -1,10 +1,8 @@
-const proxyquire = require('proxyquire').noPreserveCache().noCallThru();
-
 const {
   d,
   expect,
+  pquire,
   sinon: { stub },
-  tquire,
 } = deps;
 
 const me = __filename;
@@ -49,7 +47,7 @@ d(me, () => {
     mocks['fs'] = mockFs;
     mocks['./reduce-to-sets-of-stats'] = mockReduceToSetsOfStats;
 
-    reduceToTypesSync = proxyquire(tquire(me, false), mocks);
+    reduceToTypesSync = pquire(me, mocks);
   });
 
   it('should try to readdirSync', () => {

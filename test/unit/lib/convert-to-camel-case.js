@@ -1,9 +1,8 @@
-const proxyquire = require('proxyquire').noPreserveCache().noCallThru();
 const {
   d,
   expect,
+  pquire,
   sinon: { stub },
-  tquire,
 } = deps;
 
 const me = __filename;
@@ -38,7 +37,7 @@ d(me, () => {
 
     mocks['./camel-case'] = mockCamelCase;
 
-    convertToCamelCase = proxyquire(tquire(me, false), mocks);
+    convertToCamelCase = pquire(me, mocks);
 
     mockStringReplace = stub();
 
